@@ -1,0 +1,279 @@
+.fleet {
+  padding: var(--spacing-3xl) 0;
+  background: #e9ecef;
+
+  @media (max-width: 767px) {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      border-radius: 50px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--color-gray);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+  }
+
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: var(--spacing-xl);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .featureCard {
+      background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+      border-radius: var(--border-radius-lg);
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+
+      &:hover {
+        border-color: var(--color-secondary);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .featureIcon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.25rem;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #2a4ab5 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        box-shadow: 0 4px 16px rgba(31, 49, 136, 0.2);
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 0.9375rem;
+        color: var(--color-gray);
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  .gallery {
+    margin-bottom: var(--spacing-xl);
+    background: var(--color-gray-light);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    .galleryTitle {
+      text-align: center;
+      font-size: 1.75rem;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+    }
+
+    .swiper {
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+
+      :global(.swiper-button-next),
+      :global(.swiper-button-prev) {
+        color: var(--color-secondary);
+        background: rgba(255, 255, 255, 0.9);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+
+        &::after {
+          font-size: 1.25rem;
+          font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+          width: 35px;
+          height: 35px;
+
+          &::after {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      :global(.swiper-pagination-bullet) {
+        background: var(--color-primary);
+        opacity: 0.5;
+        width: 10px;
+        height: 10px;
+
+        &:global(.swiper-pagination-bullet-active) {
+          opacity: 1;
+          background: var(--color-secondary);
+        }
+      }
+    }
+
+    .slideContent {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        aspect-ratio: 4/3;
+      }
+
+      .slideImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .slideCaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        span {
+          font-size: 1.125rem;
+          font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+          span {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &:hover .slideCaption {
+        opacity: 1;
+      }
+
+      .imagePlaceholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #2a4ab5 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        @media (max-width: 768px) {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  .whyUs {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2a4ab5 100%);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2.5rem;
+    color: white;
+    box-shadow: var(--shadow-lg);
+
+    @media (max-width: 768px) {
+      padding: 2rem 1.5rem;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 2.5rem;
+    }
+
+    .whyUsGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .whyUsItem {
+        text-align: center;
+
+        .number {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          background: var(--color-secondary);
+          color: var(--color-primary);
+          border-radius: 50%;
+          font-size: 1.5rem;
+          font-weight: 900;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+        }
+
+        h4 {
+          font-size: 1.25rem;
+          color: white;
+          margin-bottom: 0.75rem;
+        }
+
+        p {
+          font-size: 0.9375rem;
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

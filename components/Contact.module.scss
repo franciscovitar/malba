@@ -1,0 +1,330 @@
+.contact {
+  padding: var(--spacing-3xl) 0;
+  background: #e9ecef;
+
+  @media (max-width: 767px) {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @media (max-width: 480px) {
+      padding: 0 1rem;
+    }
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      border-radius: 50px;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--color-gray);
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 480px) {
+      gap: 1.25rem;
+    }
+
+    .contactCards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @media (max-width: 480px) {
+        gap: 1rem;
+      }
+
+      .card {
+        background: white;
+        border-radius: var(--border-radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+          padding: 1.25rem;
+        }
+
+        @media (max-width: 480px) {
+          padding: 0.875rem;
+          border-radius: var(--border-radius);
+        }
+
+        @media (max-width: 375px) {
+          padding: 0.75rem;
+        }
+
+        &:hover {
+          border-color: var(--color-secondary);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .cardHeader {
+          margin-bottom: 1.5rem;
+
+          @media (max-width: 768px) {
+            margin-bottom: 1rem;
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.25rem;
+            }
+          }
+
+          .cardSubtitle {
+            font-size: 0.9375rem;
+            color: var(--color-gray);
+            margin: 0;
+
+            @media (max-width: 768px) {
+              font-size: 0.875rem;
+            }
+          }
+        }
+
+        .contactInfo {
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+          padding: 1.5rem;
+          background: var(--color-gray-light);
+          border-radius: var(--border-radius);
+          margin-bottom: 1.5rem;
+
+          @media (max-width: 768px) {
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+          }
+
+          @media (max-width: 480px) {
+            gap: 0.625rem;
+            padding: 0.625rem;
+          }
+
+          @media (max-width: 375px) {
+            gap: 0.5rem;
+            padding: 0.5rem;
+          }
+
+          .iconLarge {
+            font-size: 3rem;
+            color: #25D366;
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+              font-size: 2rem;
+            }
+
+            @media (max-width: 480px) {
+              font-size: 1.75rem;
+            }
+          }
+
+          .contactDetails {
+            flex: 1;
+            min-width: 0;
+
+            .label {
+              font-size: 0.875rem;
+              color: var(--color-gray);
+              margin-bottom: 0.25rem;
+
+              @media (max-width: 768px) {
+                font-size: 0.75rem;
+              }
+
+              @media (max-width: 480px) {
+                font-size: 0.6875rem;
+              }
+            }
+
+            .number {
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: var(--color-primary);
+              margin: 0;
+              word-break: break-all;
+              overflow-wrap: break-word;
+
+              @media (max-width: 768px) {
+                font-size: 1.125rem;
+              }
+
+              @media (max-width: 480px) {
+                font-size: 1rem;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+
+        .ctaButton {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          width: 100%;
+          padding: 1rem 2rem;
+          background: var(--color-secondary);
+          color: var(--color-primary);
+          border-radius: var(--border-radius);
+          font-size: 1.0625rem;
+          font-weight: 700;
+          transition: all 0.3s ease;
+          box-shadow: var(--shadow-sm);
+
+          @media (max-width: 768px) {
+            padding: 0.875rem 1.5rem;
+            font-size: 0.9375rem;
+            gap: 0.5rem;
+          }
+
+          svg {
+            font-size: 1.375rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.125rem;
+            }
+          }
+
+          &:hover {
+            background: #ffc142;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+          }
+        }
+      }
+    }
+
+    .formSection {
+      .formCard {
+        background: white;
+        border-radius: var(--border-radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        border: 2px solid var(--color-gray-light);
+        height: 100%;
+
+        h3 {
+          font-size: 1.5rem;
+          color: var(--color-primary);
+          margin-bottom: 0.5rem;
+        }
+
+        .formSubtitle {
+          font-size: 0.9375rem;
+          color: var(--color-gray);
+          margin-bottom: 1.5rem;
+        }
+
+        .form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.25rem;
+
+          .inputGroup {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            label {
+              font-size: 0.9375rem;
+              font-weight: 600;
+              color: var(--color-primary);
+            }
+
+            input,
+            textarea {
+              padding: 0.875rem 1rem;
+              font-size: 1rem;
+              border: 2px solid var(--color-gray-light);
+              border-radius: var(--border-radius);
+              font-family: var(--font-primary);
+              transition: all 0.3s ease;
+
+              &:focus {
+                outline: none;
+                border-color: var(--color-secondary);
+                box-shadow: 0 0 0 3px rgba(250, 174, 22, 0.1);
+              }
+
+              &::placeholder {
+                color: var(--color-gray);
+              }
+            }
+
+            textarea {
+              resize: vertical;
+              min-height: 100px;
+            }
+          }
+
+          .submitButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-size: 1.0625rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            margin-top: 0.5rem;
+
+            svg {
+              font-size: 1.25rem;
+            }
+
+            &:hover {
+              background: #162559;
+              transform: translateY(-2px);
+              box-shadow: var(--shadow-md);
+            }
+          }
+        }
+      }
+    }
+  }
+}
